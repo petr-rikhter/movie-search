@@ -15,6 +15,9 @@ const Main = (props) => {
       .then((data) => {
         setMovies(data.Search);
         setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
       });
   }, []);
 
@@ -29,6 +32,9 @@ const Main = (props) => {
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.Search);
+        setLoading(false);
+      })
+      .catch((error) => {
         setLoading(false);
       });
   };
