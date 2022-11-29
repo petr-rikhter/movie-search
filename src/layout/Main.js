@@ -12,12 +12,14 @@ const Main = (props) => {
       .then((data) => setMovies(data.Search));
   }, []);
 
-  const searchInputHandler = (props) => {
-    fetch(`https://www.omdbapi.com/?apikey=fe32a74f&s=${props}`)
+  const searchInputHandler = (props, type = "all") => {
+    fetch(
+      `https://www.omdbapi.com/?apikey=fe32a74f&s=${props}${
+        type === "all" ? "" : `&type=${type}`
+      }`
+    )
       .then((response) => response.json())
       .then((data) => setMovies(data.Search));
-
-    console.log(props);
   };
 
   return (

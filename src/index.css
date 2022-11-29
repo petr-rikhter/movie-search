@@ -27,3 +27,9 @@ nav {
   top: 0;
   right: 0.5rem;
 }
+
+.search-filter {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
