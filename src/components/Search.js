@@ -9,10 +9,6 @@ const Search = (props) => {
     }
   };
 
-  const searchButtonHandler = (event) => {
-    props.onSetSearchInput(searchRef.current.value);
-  };
-
   return (
     <div className="row">
       <div className="input-field ">
@@ -25,7 +21,7 @@ const Search = (props) => {
           onKeyDown={searchHandler}
         />
         <a
-          onClick={searchButtonHandler}
+          onClick={() => props.onSetSearchInput(searchRef.current.value)}
           className="waves-effect blue lighten-3  btn-small"
         >
           Искать
