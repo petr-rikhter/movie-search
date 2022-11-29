@@ -4,29 +4,38 @@ import Preloader from "../components/Preloader";
 import Search from "../components/Search";
 
 const Main = (props) => {
-  const [movies, setMovies] = useState(false);
+  const [movies, setMovies] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`https://www.omdbapi.com/?apikey=fe32a74f&s=matrix`)
       .then((response) => response.json())
-      .then((data) => setMovies(data.Search));
+      .then((data) => {
+        setMovies(data.Search);
+        setLoading(false);
+      });
   }, []);
 
   const searchInputHandler = (props, type = "all") => {
+    setLoading(true);
+
     fetch(
       `https://www.omdbapi.com/?apikey=fe32a74f&s=${props}${
         type === "all" ? "" : `&type=${type}`
       }`
     )
       .then((response) => response.json())
-      .then((data) => setMovies(data.Search));
+      .then((data) => {
+        setMovies(data.Search);
+        setLoading(false);
+      });
   };
 
   return (
     <main className="container content">
       <Search onSetSearchInput={searchInputHandler} />
 
-      {movies ? <Movies movies={movies} /> : <Preloader />}
+      {loading ? <Preloader /> : <Movies movies={movies} />}
     </main>
   );
 };
