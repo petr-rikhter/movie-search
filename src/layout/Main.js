@@ -7,13 +7,13 @@ const Main = (props) => {
   const [movies, setMovies] = useState(false);
 
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?apikey=fe32a74f&s=matrix`)
+    fetch(`https://www.omdbapi.com/?apikey=fe32a74f&s=matrix`)
       .then((response) => response.json())
       .then((data) => setMovies(data.Search));
   }, []);
 
   const searchInputHandler = (props) => {
-    fetch(`http://www.omdbapi.com/?apikey=fe32a74f&s=${props}`)
+    fetch(`https://www.omdbapi.com/?apikey=fe32a74f&s=${props}`)
       .then((response) => response.json())
       .then((data) => setMovies(data.Search));
 

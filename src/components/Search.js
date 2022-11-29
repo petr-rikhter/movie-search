@@ -22,7 +22,7 @@ const Search = (props) => {
         />
         <a
           onClick={() => props.onSetSearchInput(searchRef.current.value)}
-          className="waves-effect blue lighten-3  btn-small"
+          className="waves-effect blue lighten-3  btn-small btn-absolute"
         >
           Искать
         </a>
