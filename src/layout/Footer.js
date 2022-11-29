@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footer(props) {
+const Footer = (props) => {
   return (
     <footer className="page-footer grey">
       <div className="footer-copyright">
@@ -13,6 +13,6 @@ function Footer(props) {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

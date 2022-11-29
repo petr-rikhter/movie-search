@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header(props) {
+const Header = (props) => {
   return (
     <nav
       className="blue lighten-3
@@ -18,6 +18,6 @@ function Header(props) {
       </div>
     </nav>
   );
-}
+};
 
 export default Header;
