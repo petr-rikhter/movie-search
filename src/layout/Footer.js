@@ -6,7 +6,10 @@ const Footer = (props) => {
       <div className="footer-copyright">
         <div className="container">
           © {new Date().getFullYear()} Copyright Text
-          <a className="grey-text text-lighten-4 right" href="#!">
+          <a
+            className="grey-text text-lighten-4 right"
+            href="https://github.com/petr-rikhter/movie-search"
+          >
             Repo link
           </a>
         </div>

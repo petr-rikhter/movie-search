@@ -12,7 +12,7 @@ const Header = (props) => {
         </a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
-            <a href="#">Repo link</a>
+            <a href="https://github.com/petr-rikhter/movie-search">Repo link</a>
           </li>
         </ul>
       </div>
